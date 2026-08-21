@@ -37,7 +37,6 @@ To ensure persistence, the attacker created a scheduled task `PythonUpdate` runn
 ## ⭕ Scoping  
 
 From a global perspective and based on the available data, `python.exe` and the scheduled task `PythonUpdate` exist exclusively on `FRONTDESK-PC1.KCD.local`.
-
 `index="mydfir_soc" python.exe |stats count by Computer`
 <img width="567" height="233" alt="image" src="https://github.com/user-attachments/assets/ed1d8719-8b7f-4af8-a7e9-97367c878d0a" />
 
