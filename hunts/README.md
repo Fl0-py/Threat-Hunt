@@ -44,24 +44,29 @@ From a global perspective and based on the available data, `python.exe` and the 
 <img width="567" height="233" alt="image" src="https://github.com/user-attachments/assets/ed1d8719-8b7f-4af8-a7e9-97367c878d0a" />
 
 `index="mydfir_soc" PythonUpdate |stats count by Computer`
+
 <img width="1246" height="391" alt="image" src="https://github.com/user-attachments/assets/de894dab-3c2b-40b2-b46c-5de6c05a6463" />
 The IP address `157.245.46.190` communicated exclusively with the machine `FRONTDESK-PC1` (`172.16.0.110`).
 
 `index="mydfir_soc" 157.245.46.190 |stats count by src_ip, dest_ip`
+
 <img width="1851" height="381" alt="image" src="https://github.com/user-attachments/assets/5f874132-fabf-4088-b98a-0a0067384064" />
 
 No lateral movement was observed from the attacker's IP address `172.16.0.184` toward any other host.
 
 `index="mydfir_soc" sourcetype="winevent:security" EventCode=4624 src_ip= "172.16.0.184" ComputerName!="FRONTDESK-PC1.KCD.local"`
+
 <img width="775" height="356" alt="image" src="https://github.com/user-attachments/assets/e0c3812e-e678-46c4-b38a-6c515bd6cce0" />
 
 No credential dumping was identified. No suspicious access to LSASS was observed.	
 
 `index="mydfir_soc" sourcetype="sysmon" source="sysmon.csv" EventCode="10" TargetImage="*lsass.exe"`
+
 <img width="1032" height="456" alt="image" src="https://github.com/user-attachments/assets/ccf9d3fd-265c-4dae-9c03-cb95676c863b" />
 No Mimikatz artifacts were discovered.	
 
 `index="mydfir_soc" sourcetype="sysmon" host="FRONTDESK-PC1" (CommandLine="*sekurlsa*" OR CommandLine="*mimikatz*" OR CommandLine="*lsadump*" OR CommandLine="*privilege::debug*") | table _time, Image, CommandLine, User | sort _time`
+
 <img width="1334" height="431" alt="image" src="https://github.com/user-attachments/assets/e8f02b3d-cbf5-47a1-bdae-b5a18c0dd0b5" />
 
 
