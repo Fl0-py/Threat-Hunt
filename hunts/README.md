@@ -70,7 +70,7 @@ No Mimikatz artifacts were discovered.
 <img width="1334" height="431" alt="image" src="https://github.com/user-attachments/assets/e8f02b3d-cbf5-47a1-bdae-b5a18c0dd0b5" />
 
 
-## 🚧 Criticality, Impact, and Next Steps Prioritization
+## 🚧 Criticality, Impact, and Response
 
 The incident is confirmed with the compromise of a local administrator account and a machine. Within the provided dataset, nothing indicates that the domain controller was compromised, nor that python.exe was installed on any other machine.
 
