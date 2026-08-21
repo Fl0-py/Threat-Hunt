@@ -40,6 +40,7 @@ From a global perspective and based on the available data, `python.exe` and the 
 
 
 `index="mydfir_soc" python.exe |stats count by Computer`
+
 <img width="567" height="233" alt="image" src="https://github.com/user-attachments/assets/ed1d8719-8b7f-4af8-a7e9-97367c878d0a" />
 
 `index="mydfir_soc" PythonUpdate |stats count by Computer`
