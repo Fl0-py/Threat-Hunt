@@ -18,8 +18,7 @@ Command Line: `AnyDesk.exe --install --silent --password P@ssword1`
 
 ## 📝 First Response
 
-**What's your gut telling you and how would you confirm it?**
-I sort the information as follows.
+**What's your gut telling you and how would you confirm it?** I sort the information as follows :
 
 Context: user `svc-confluence` runs `AnyDesk.exe --install --silent --password P@ssword1`, installing the tool
 on device `app-east01.internal.local`.
@@ -27,34 +26,28 @@ on device `app-east01.internal.local`.
 What's abnormal: `AnyDesk.exe` itself (if it's not part of the baseline), the `--install --silent` flags, and
 the fact that `svc-confluence` is the one running it.
 
-What to prioritize: the volatility of the data, both before and after the command ran.
-
-As an analyst, I'd check whether there's another ticket I can link this to, searching for `AnyDesk.exe` and
-this exact command line, plus any ticket about active network connections involving `AnyDesk.exe`. The `.exe`
-extension implies a Microsoft/Windows environment.
+What to prioritize: the volatility of the data, both before and after the command ran.As an analyst, I'd check 
+whether there's another ticket I can link this to, searching for `AnyDesk.exe` and this exact command line, plus
+any ticket about active network connections involving `AnyDesk.exe`. The `.exe` extension implies a Microsoft/Windows 
+environment.
 
 How could this be a false positive? A legitimate installation performed by IT, or a user operating under the
 `svc-confluence` profile. How could this be a true positive? An illegitimate installation by an external
-threat actor aiming to take control of an organizational resource.
-
-If the threat is real, I'd place this under Initial Access — T1133 (External Remote Services) combined with
-Valid Accounts (T1078) for the `svc-confluence` user. We could also be looking at lateral movement (T1021) or
-command and control (T1219).
+threat actor aiming to take control of an organizational resource. If the threat is real, I'd place this under 
+Initial Access — T1133 (External Remote Services) combined with Valid Accounts (T1078) for the `svc-confluence` user.
+We could also be looking at lateral movement (T1021) or command and control (T1219).
 
 My instinct is to quickly settle the legitimacy of AnyDesk and/or a planned intervention, to rule out a false
 positive fast, before investigating the events in the alert's time window for new elements confirming the
 threat hypothesis.
 
-**What questions would you ask?**
-Is AnyDesk a known, commonly used application within the organization? What's the criticality/role of this
+**What questions would you ask?** Is AnyDesk a known, commonly used application within the organization? What's the criticality/role of this
 machine within the organization? Is there an active connection via AnyDesk right now? Is any IT action planned
 involving AnyDesk? Who has access to the `svc-confluence` profile? What are its permissions? What do the
 authentication logs around this profile show? What was `svc-confluence`'s behavior before and after the alert
 (time window +/- 2h)?
 
-**What would you investigate and in what order?**
-Before diving into execution, I map out the volatility and legitimacy axes to prioritize my actions.
-
+**What would you investigate and in what order?** Before diving into execution, I map out the volatility and legitimacy axes to prioritize my actions.
 On volatility: I need to prioritize preserving data around the `svc-confluence` profile — authentication logs,
 command/process launch logs, file creation/modification — and network data that could reveal a C2-type
 connection.
@@ -75,13 +68,11 @@ persistence activity (checking persistence registry keys, scheduled task creatio
 I then pivot to the profile itself and try to determine the logon type, the source IP if available, or observe
 its activity.
 
-**Who would you communicate with and when?**
-I start by notifying my team that I'm taking ownership of the ticket and checking for any correlated alert. I
-then contact IT with questions about AnyDesk's legitimacy.
-
-If, after analysis, the threat is confirmed, with the help of IT and IR: I isolate the host. I reset
-`svc-confluence`'s password and revoke all associated sessions/tokens. I remediate by uninstalling AnyDesk and
-any other persistent behavior. I then hand the host back to the user.
+**Who would you communicate with and when?** I start by notifying my team that I'm taking ownership of the ticket 
+and checking for any correlated alert. I then contact IT with questions about AnyDesk's legitimacy. If, after analysis,
+the threat is confirmed, with the help of IT and IR: I isolate the host. I reset `svc-confluence`'s password and revoke 
+all associated sessions/tokens. I remediate by uninstalling AnyDesk and any other persistent behavior. I then hand the
+host back to the user.
 
 ## 🧠 Expert Review
 
