@@ -2,6 +2,7 @@
 
 ## 🎬 Scenario
 
+```
 An AP clerk calls the SOC at 2:10 PM about a payment she processed that morning. No alert fired. The previous
 week, a vendor emailed to say their banking details had changed and sent updated remittance instructions on
 the vendor's usual letterhead. The email arrived on the existing thread, quoting the last three messages about
@@ -11,6 +12,7 @@ She replied with a question and got an answer within the hour, then updated the 
 she paid the invoice — $184,000. At lunch, the real vendor called asking why it was still outstanding. She had
 already checked the sender address and it matches the vendor's domain exactly, character for character.
 
+```
 ## 🧭 Guided Questions
 
 - What questions would you ask?
