@@ -1,14 +1,14 @@
 # Scenario of the Week 2 — Unauthorized AnyDesk Installation via a Service Account
 
 ## 🎬 Scenario
-
+```
 Alert: MYDFIR-ALRT-0000
 Alert Name: Unauthorized Remote Tool Installation
 Device: `app-east01.internal.local`
 User: `svc-confluence`
 File: `AnyDesk.exe`
 Command Line: `AnyDesk.exe --install --silent --password P@ssword1`
-
+```
 ## 🧭 Guided Questions
 
 - What questions would you ask?
