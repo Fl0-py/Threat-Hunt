@@ -49,8 +49,9 @@ Before starting the investigation, I set contradictory (true/false positive) hyp
    server name.
 
 To confirm, I'll contact IT to validate (or rule out) the task's legitimacy, before digging further into the
-activity on the device and the `administrator` profile that initiated the scan. I set a graduated IR response
-threshold based on the investigation outcome: 
+activity on the device and the `administrator` profile that initiated the scan. 
+
+I set a graduated IR response threshold based on the investigation outcome: 
 - legitimate → close the ticket; 
 - not recognized → targeted network block on the source;
 - lateral movement, persistence, or exfiltration demonstrated → full isolation of the source and associated targets.
