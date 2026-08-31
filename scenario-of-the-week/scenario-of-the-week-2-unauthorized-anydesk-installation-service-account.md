@@ -24,7 +24,7 @@ Context: user `svc-confluence` runs `AnyDesk.exe --install --silent --password P
 on device `app-east01.internal.local`.
 What's abnormal: `AnyDesk.exe` itself (if it's not part of the baseline), the `--install --silent` flags, and
 the fact that `svc-confluence` is the one running it.
-What to prioritize: the volatility of the data, both before and after the command ran.As an analyst, I'd check 
+What to prioritize: the volatility of the data, both before and after the command ran. As an analyst, I'd check 
 whether there's another ticket I can link this to, searching for `AnyDesk.exe` and this exact command line, plus
 any ticket about active network connections involving `AnyDesk.exe`. The `.exe` extension implies a Microsoft/Windows 
 environment.
