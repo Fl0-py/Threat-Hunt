@@ -20,12 +20,13 @@ Command Line: `AnyDesk.exe --install --silent --password P@ssword1`
 
 **What's your gut telling you and how would you confirm it?** I sort the information as follows :
 
-Context: user `svc-confluence` runs `AnyDesk.exe --install --silent --password P@ssword1`, installing the tool
+- Context: user `svc-confluence` runs `AnyDesk.exe --install --silent --password P@ssword1`, installing the tool
 on device `app-east01.internal.local`.
-What's abnormal: `AnyDesk.exe` itself (if it's not part of the baseline), the `--install --silent` flags, and
+- What's abnormal: `AnyDesk.exe` itself (if it's not part of the baseline), the `--install --silent` flags, and
 the fact that `svc-confluence` is the one running it.
-What to prioritize: the volatility of the data, both before and after the command ran. As an analyst, I'd check 
-whether there's another ticket I can link this to, searching for `AnyDesk.exe` and this exact command line, plus
+- What to prioritize: the volatility of the data, both before and after the command ran.
+
+As an analyst, I'd check whether there's another ticket I can link this to, searching for `AnyDesk.exe` and this exact command line, plus
 any ticket about active network connections involving `AnyDesk.exe`. The `.exe` extension implies a Microsoft/Windows 
 environment.
 How could this be a false positive? A legitimate installation performed by IT, or a user operating under the
