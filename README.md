@@ -6,11 +6,11 @@ This repo doubles as a portfolio to showcase my growth as a SOC analyst — demo
 
 📂 Repository Structure
 
-/detection-queries/ → Reusable KQL/SPL queries and detection logic
+[`detection-queries/`](https://github.com/Fl0-py/Threat-Hunt/tree/main/detection-queries) → Reusable KQL/SPL queries and detection logic
 
-/hunts/ → Writeups of completed hunts/mini-challenges
+[`hunts/`](https://github.com/Fl0-py/Threat-Hunt/tree/main/hunts) → Writeups of completed hunts/mini-challenges
 
-/Scenario of the week / → Think through realistic situation/alerts and develop methodology to respond
+[`scenario-of-the-week/`](https://github.com/Fl0-py/Threat-Hunt/tree/main/scenario-of-the-week) → Think through realistic situation/alerts and develop methodology to respond
 
 
 🎯 Purpose
@@ -22,5 +22,3 @@ This playbook is designed to demonstrate:
 🔍 Threat hunting skills
 
 📝 SOC triage & investigations
-
-🗂️ MITRE ATT&CK mapping
