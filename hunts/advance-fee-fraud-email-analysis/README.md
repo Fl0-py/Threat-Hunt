@@ -1,5 +1,14 @@
 # Impersonated US Treasury Officials — Advance-Fee Fraud Email
 
+## 🧭 Investigation Framework
+
+This hunt was worked through a personal framework (V1) — a visual flow of the questions asked at each stage of
+triage and the fields pulled to answer them, rather than an ad-hoc checklist:
+
+**First Instinct → Content / Reputation → Impact → Scope**
+
+<img src="../methodology/email-investigation-framework-v1.svg" alt="Email investigation framework — First Instinct, Content, Reputation, Impact, Scope">
+
 ## 🎬 Scenario:
 
 MyDFIR "First Email Analysis" lab: examine a raw email's technical details without opening it in a mail client,
