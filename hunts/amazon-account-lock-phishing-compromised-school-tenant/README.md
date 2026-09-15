@@ -283,3 +283,31 @@ sender.
 
 **Next action:** open a rendered view (a real mail client, or a safe preview) side by side with the raw `.eml`
 on every future hunt, specifically for the `From`/display-name field, instead of relying on raw headers alone.
+
+## 🧭 Investigation Framework — V2
+
+Writing up the reflection above surfaced a mismatch between how this hunt was actually worked and how the
+personal investigation framework (V1) drew it: Reputation was boxed as its own sequential phase, parallel to
+Content, when in practice the ISP lookup on `40.107.215.98` was available the moment the `Received` chain was
+read in First Instinct — its significance just wasn't recognized until revisited later. A boxed, ordered phase
+doesn't represent a check that should fire the instant an artifact appears, wherever in the flow it appears.
+
+This produced a V2 redesign, built around a crime-scene visual metaphor for better recall than a flowchart of
+boxes:
+
+- **First Instinct** is the tape cordoning off the mail — first space/time, identification, and technical
+  observations, exactly as a scene is secured before anything inside it is touched.
+- **Content** is what's found once the tape is up: two pillars, **Attachment** and **Message**.
+- **Impact** is the explosion that breaks the cordon open.
+- **Scope** is the blast radius — other "crime scenes" the same pattern may have reached.
+- **Reputation** and **Escalation** are drawn *outside* the cordon, striking in as external triggers rather than
+  sequential boxes — visually encoding that they're reflexes invoked by whatever artifact just surfaced, not
+  steps visited in order. Escalation (the endpoint/process/network-log follow-up questions, previously nested
+  under Impact) moved out for the same reason, even though no single incident in this hunt forced that specific
+  call — once Reputation stopped being a boxed phase, keeping Escalation boxed under Impact was the inconsistent
+  choice.
+
+Like V1, this is a living framework — expect it to keep evolving hunt over hunt, with the reasoning for each
+change written down here rather than only the diagram itself.
+
+<img src="../methodology/email-investigation-framework-v2.svg" alt="Email investigation framework V2 — crime-scene metaphor: First Instinct, Content (Attachment/Message), Impact, Scope, with Reputation and Escalation as external triggers">
