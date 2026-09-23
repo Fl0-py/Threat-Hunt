@@ -182,9 +182,11 @@ Same contradictory hypotheses going in:
 
 To settle this, I reach out to the user and IT in parallel with an IP reputation check and an authentication
 log review. The graduated response threshold now branches on the sign-in log findings rather than staying
-uniform: false positive confirmed → close the ticket; valid account compromise confirmed → depending on what
-the Microsoft 365 sign-in logs show, block the IP, lock the account, revoke sessions/tokens, reset MFA, or
-change the password; data forwarding, persistence, or exfiltration → trigger a full incident response.
+uniform: 
+- false positive confirmed → close the ticket;
+- valid account compromise confirmed → depending on what the Microsoft 365 sign-in logs show, block the IP, lock the account, revoke sessions/tokens, reset MFA, or
+change the password;
+- data forwarding, persistence, or exfiltration → trigger a full incident response.
 
 **What questions would you ask?** One change: "Did MFA succeed?" becomes "What MFA methods were used per
 connection?" — the rest of the list is unchanged.
