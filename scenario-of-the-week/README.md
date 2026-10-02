@@ -19,3 +19,4 @@ not a polished write-up that hides the learning process.
 | 7 | [potentially-malicious-url-click-detected](scenario-of-the-week-7-potentially-malicious-url-click-detected.md) | A user clicks a link to a PaaS-hosted domain structured like an auto-generated phishing kit |
 | 8 | [endpoint-file-downloaded-via-wget](scenario-of-the-week-8-endpoint-file-downloaded-via-wget.md) | A file is pulled from an S3 bucket URL to a Linux host via `wget` under a user account |
 | 9 | [accounting-credential-phishing](scenario-of-the-week-9-accounting-credential-phishing.md) | An Accounting user clicks a fake "IT security upgrade" link and enters their password on a page that fails to load |
+| 10 | [stolen-laptop-vp-customer-success](scenario-of-the-week-10-stolen-laptop-vp-customer-success.md) | A client reports that a VP in Customer Success had their work laptop stolen while on vacation — no alert, just an email asking what to do |
