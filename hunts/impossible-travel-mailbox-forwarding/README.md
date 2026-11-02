@@ -21,6 +21,8 @@ The lab data was generated with third-party VPN providers; the lab instructs to 
 
 As a SOC analyst, the task is to identify impossible travel and unfamiliar sign-ins in Splunk using transformation queries (`stats`, `eval`, `table`), answer the six questions, and document the findings.
 
+The real chronology of the work, the mistakes I corrected and the method I am building are in [`notes.md`](notes.md); the lab's raw data is not republished (it belongs to the course).
+
 - **SIEM:** Splunk
 - **Index:** `cloud`
 - **Timezone:** UTC
